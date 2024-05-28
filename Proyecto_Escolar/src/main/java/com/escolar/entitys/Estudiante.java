@@ -29,7 +29,7 @@ public class Estudiante {
 	private Date fecha_nacimiento;
 	
 	@Column(name = "dni")
-	private String dni;
+	private int dni;
 	
 	@Column(name = "direccion")
 	private String direccion;
