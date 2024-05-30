@@ -33,7 +33,7 @@ public class Docente {
 	private String apellidos;
 	
 	@Column(name = "fecha_nacimiento")
-	@DateTimeFormat(pattern = "yyyy-MM-ddas")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Temporal(TemporalType.DATE)
 	private Date fec_nacimiento;
 	
