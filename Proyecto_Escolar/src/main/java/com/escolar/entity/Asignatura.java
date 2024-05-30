@@ -1,4 +1,4 @@
-package com.escolar.entitys;
+package com.escolar.entity;
 
 import jakarta.persistence.Column;
 
@@ -10,16 +10,15 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Entity
-@Table(name = "carrera")
+@Table(name = "asignatura")
 @Data
-public class Carrera {
-	
-	@Id
-	@Column(name = "id_carrera")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id_carrera;
-	
-	@Column(name = "nombre_carrera")
-	private String nom_carrera;
+public class Asignatura {
 
+	@Id
+	@Column(name = "id_asignatura")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id_asignatura;
+	
+	@Column(name = "nombre_asignatura")
+	private String nom_asignatura;
 }

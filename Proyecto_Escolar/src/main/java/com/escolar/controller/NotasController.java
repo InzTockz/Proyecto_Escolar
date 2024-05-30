@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.escolar.entitys.Notas;
+import com.escolar.entity.Notas;
 import com.escolar.services.NotasService;
 
 @RestController

@@ -1,4 +1,4 @@
-package com.escolar.entitys;
+package com.escolar.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

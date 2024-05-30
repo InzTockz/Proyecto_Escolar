@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.escolar.entitys.Asignatura;
+import com.escolar.entity.Asignatura;
 import com.escolar.services.AsignaturaService;
 
 @RestController

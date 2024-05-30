@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.escolar.entitys.Carrera;
+import com.escolar.entity.Carrera;
 import com.escolar.repository.ICarreraRepository;
 
 @Service

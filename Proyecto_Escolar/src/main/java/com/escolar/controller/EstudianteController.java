@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.escolar.entitys.Estudiante;
+import com.escolar.entity.Estudiante;
 import com.escolar.services.EstudianteService;
 
 @RestController

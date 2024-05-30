@@ -3,7 +3,7 @@ package com.escolar.services;
 import java.util.List;
 import java.util.Optional;
 
-import com.escolar.entitys.Grado;
+import com.escolar.entity.Grado;
 
 public interface GradoService {
 

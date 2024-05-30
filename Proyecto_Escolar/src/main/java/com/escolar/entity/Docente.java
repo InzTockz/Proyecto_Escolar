@@ -1,4 +1,4 @@
-package com.escolar.entitys;
+package com.escolar.entity;
 
 import java.util.Date;
 
