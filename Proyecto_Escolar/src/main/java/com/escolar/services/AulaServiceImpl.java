@@ -16,7 +16,7 @@ public class AulaServiceImpl implements AulaService {
 	private IAulaRepository auRepo;
 	
 	@Override
-	public List<Aula> findByAll() {
+	public List<Aula> findAll() {
 		return auRepo.findAll();
 	}
 

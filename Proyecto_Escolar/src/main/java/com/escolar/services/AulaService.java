@@ -7,7 +7,7 @@ import com.escolar.entitys.Aula;
 
 public interface AulaService {
 
-	List<Aula> findByAll();
+	List<Aula> findAll();
 	
 	Optional<Aula> findById(int id);
 	
