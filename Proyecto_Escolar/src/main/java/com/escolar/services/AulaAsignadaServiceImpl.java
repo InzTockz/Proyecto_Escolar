@@ -16,10 +16,10 @@ public class AulaAsignadaServiceImpl implements AulaAsignadaService {
 
 	@Autowired
 	private IAulaAsignadaRepository asRepo;
-	
+
 	@Autowired
 	private AulaService aRepo;
-	
+
 	@Override
 	public List<AulaAsignada> findAll() {
 		return asRepo.findAll();
@@ -32,20 +32,24 @@ public class AulaAsignadaServiceImpl implements AulaAsignadaService {
 
 	@Override
 	public AulaAsignada save(AulaAsignada aulaasignada) {
-		
-		Optional<Aula> findAula = aRepo.findById(aulaasignada.getAula().getId_aula());
-		Aula aula = findAula.get();
-		if(aula!=null) {
-			aula.setAlumnos_max(aula.getAlumnos_max()-1);
-			aRepo.update(aula.getId_aula(), aula);
+
+		if (asRepo.existsByEstudianteAndAula(aulaasignada.getEstudiante(), aulaasignada.getAula())) {
+			return null;
+		} else {
+			Optional<Aula> findAula = aRepo.findById(aulaasignada.getAula().getId_aula());
+			Aula aula = findAula.get();
+			if (aula != null) {
+				aula.setAlumnos_max(aula.getAlumnos_max() - 1);
+				aRepo.update(aula.getId_aula(), aula);
+			}
+
+			return asRepo.save(aulaasignada);
 		}
-		
-		return asRepo.save(aulaasignada);
 	}
 
 	@Override
 	public AulaAsignada update(int id, AulaAsignada aulaasignada) {
-		if(asRepo.existsById(id)) {
+		if (asRepo.existsById(id)) {
 			return asRepo.save(aulaasignada);
 		} else {
 			return null;
