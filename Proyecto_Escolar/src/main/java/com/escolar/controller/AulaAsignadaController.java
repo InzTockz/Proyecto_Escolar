@@ -18,7 +18,7 @@ import com.escolar.entity.AulaAsignada;
 import com.escolar.services.AulaAsignadaService;
 
 @RestController
-@RequestMapping("api/aulaasignada")
+@RequestMapping("/api/aulaasignada")
 public class AulaAsignadaController {
 
 	@Autowired
@@ -56,4 +56,5 @@ public class AulaAsignadaController {
 		auasSer.deleteById(id);
 		return ResponseEntity.noContent().build();
 	}
+	
 }

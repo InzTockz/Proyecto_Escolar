@@ -22,7 +22,7 @@ import com.escolar.services.DocenteService;
 
 @RestController
 @RequestMapping("/api/docente")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("*")
 public class DocenteController {
 	
 	@Autowired
