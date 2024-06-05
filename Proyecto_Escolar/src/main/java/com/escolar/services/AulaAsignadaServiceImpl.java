@@ -58,6 +58,12 @@ public class AulaAsignadaServiceImpl implements AulaAsignadaService {
 
 	@Override
 	public void deleteById(int id) {
+		Optional<AulaAsignada> findAuAsig = asRepo.findById(id);
+		AulaAsignada auasig = findAuAsig.get();
+		Optional<Aula> findAula = aRepo.findById(auasig.getAula().getId_aula());
+		Aula aula = findAula.get();
+		aula.setAlumnos_max(aula.getAlumnos_max() + 1);
+		aRepo.update(aula.getId_aula(), aula);
 		asRepo.deleteById(id);
 	}
 
