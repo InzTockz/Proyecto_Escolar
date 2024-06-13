@@ -1,4 +1,4 @@
-package com.escolar.services;
+package com.escolar.services.impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.escolar.entity.Asignatura;
 import com.escolar.repository.IAsignaturaRepository;
+import com.escolar.services.AsignaturaService;
 
 @Service
 public class AsignaturaServiceImpl implements AsignaturaService {

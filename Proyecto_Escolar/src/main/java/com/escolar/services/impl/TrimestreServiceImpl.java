@@ -1,4 +1,4 @@
-package com.escolar.services;
+package com.escolar.services.impl;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.escolar.entity.Trimestre;
 import com.escolar.repository.ITrimestreRepository;
+import com.escolar.services.TrimestreService;
 
 @Service
 public class TrimestreServiceImpl implements TrimestreService {

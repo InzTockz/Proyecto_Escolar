@@ -1,4 +1,4 @@
-package com.escolar.services;
+package com.escolar.services.impl;
 
 import java.util.List;
 
@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.escolar.entity.Aula;
 import com.escolar.entity.AulaAsignada;
 import com.escolar.repository.IAulaAsignadaRepository;
+import com.escolar.services.AulaAsignadaService;
+import com.escolar.services.AulaService;
 
 @Service
 public class AulaAsignadaServiceImpl implements AulaAsignadaService {
@@ -32,18 +34,22 @@ public class AulaAsignadaServiceImpl implements AulaAsignadaService {
 
 	@Override
 	public AulaAsignada save(AulaAsignada aulaasignada) {
-
-		if (asRepo.existsByEstudianteAndAula(aulaasignada.getEstudiante(), aulaasignada.getAula())) {
+		
+		Optional<Aula> findAula = aRepo.findById(aulaasignada.getAula().getId_aula());
+		Aula aula = findAula.get();
+		if(aula.getAlumnos_max()==0) {
 			return null;
 		} else {
-			Optional<Aula> findAula = aRepo.findById(aulaasignada.getAula().getId_aula());
-			Aula aula = findAula.get();
-			if (aula != null) {
-				aula.setAlumnos_max(aula.getAlumnos_max() - 1);
-				aRepo.update(aula.getId_aula(), aula);
-			}
+			if (asRepo.existsByEstudianteAndAula(aulaasignada.getEstudiante(), aulaasignada.getAula())) {
+				return null;
+			} else {
+				if (aula != null) {
+					aula.setAlumnos_max(aula.getAlumnos_max() - 1);
+					aRepo.update(aula.getId_aula(), aula);
+				}
 
-			return asRepo.save(aulaasignada);
+				return asRepo.save(aulaasignada);
+			}
 		}
 	}
 
